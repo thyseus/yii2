@@ -17,6 +17,7 @@ Yii Framework 2 Change Log
 - Bug #12880: Fixed `yii\behaviors\AttributeTypecastBehavior` marks attributes with `null` value as 'dirty' (klimov-paul)
 - Bug #12904: Fixed lowercase table name in migrations (zlakomanoff)
 - Bug #12939: Hard coded table names for MSSQL in RBAC migration (arogachev)
+- Enh #475: Added basic bash completion support for the `./yii` command (cebe)
 - Enh #11037: `yii.js` and `yii.validation.js` use `Regexp.test()` instead of `String.match()` (arogachev, nkovacs)
 - Enh #11929: Changed `type` column type from `int` to `smallInt` in RBAC migrations (silverfire)
 - Enh #12015: Changed visibility `yii\db\ActiveQueryTrait::createModels()` from private to protected (ArekX, dynasource)
