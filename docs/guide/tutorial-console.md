@@ -107,6 +107,21 @@ You can see an example of this in the advanced project template.
 > ```
 
 
+Bash completion
+---------------
+
+Auto-completion of command arguments is a useful thing when working with the shell. Since version 2.0.11, the `./yii` command provides auto completion
+for the bash out of the box. This is provided by the `yii.bash-completion` file located in the framework base directory.
+For temporary usage you can source that file by typing:
+
+    . yii.bash-completion
+
+Note the dot on the beginning of that line. It means you want to include the definitions give in the `yii.bash-completion` file in
+your current session. For permanent usage you can copy the file to `/etc/bash_completion.d/` on your system or add the source line above
+to your `.bashrc` file.
+Check the [Bash Manual](https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion.html) for more information.
+
+
 Creating your own console commands <span id="create-command"></span>
 ----------------------------------
 
