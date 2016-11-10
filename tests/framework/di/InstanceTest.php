@@ -46,6 +46,26 @@ class InstanceTest extends TestCase
         $this->assertTrue(Instance::ensure(['class' => 'yii\db\Connection', 'dsn' => 'test'], 'yii\db\Connection', $container) instanceof Connection);
     }
 
+    /**
+     * ensure an InvalidConfigException is thrown when a component does not exist.
+     */
+    public function testEnsureNonExistingComponent()
+    {
+        $container = new Container;
+        $this->setExpectedExceptionRegExp('yii\base\InvalidConfigException', '/^Failed to instantiate component or class/i');
+        Instance::ensure('cache', 'yii\cache\Cache', $container);
+    }
+
+    /**
+     * ensure an InvalidConfigException is thrown when a class does not exist.
+     */
+    public function testEnsureNonExistingClass()
+    {
+        $container = new Container;
+        $this->setExpectedExceptionRegExp('yii\base\InvalidConfigException', '/^Failed to instantiate component or class/i');
+        Instance::ensure('yii\cache\DoesNotExist', 'yii\cache\Cache', $container);
+    }
+
     public function testEnsureWithoutType()
     {
         $container = new Container;
